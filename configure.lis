@@ -1,0 +1,35 @@
+FC              = /usr/local/bin/mpif90
+FC77            = /usr/local/bin/mpif77
+LD              = /usr/local/bin/mpif90
+CC              = /usr/local/bin/mpicc
+AR              = ar
+MOD_ESMF        = /usr/local/mod/
+LIB_ESMF        = /usr/local/lib/
+INC_JPEG2000      = /usr/local/include/
+LIB_JPEG2000      = /usr/local/lib/
+INC_ECCODES     = /usr/local/include/
+LIB_ECCODES     = /usr/local/lib/
+INC_NETCDF      = /usr/local/include/
+LIB_NETCDF      = /usr/local/lib/
+INC_HDF4        = /usr/local/include/
+LIB_HDF4        = /usr/local/lib/
+INC_HDF5        = /usr/local/include/
+LIB_HDF5        = /usr/local/lib/
+INC_HDFEOS      = /opt/hdfeos-build/include/
+LIB_HDFEOS      = /opt/hdfeos-build/lib/
+LIB_MINPACK     = 
+INC_CRTM        = 
+LIB_CRTM        = 
+INC_PROF_UTIL   = 
+LIB_PROF_UTIL   = 
+INC_CMEM        = 
+LIB_CMEM        = 
+LIB_LAPACK      = /usr/lib/x86_64-linux-gnu/lapack/
+INC_PETSC       = /usr/local/include/
+LIB_PETSC       = /usr/local/lib/
+CFLAGS          = -c  -DGFORTRAN -DLINUX -DLIS_JULES
+FFLAGS77        = -c -O2  -fbacktrace  -fconvert=big-endian -DHIDE_SHR_MSG -DNO_SHR_VMATH -DGFORTRAN -DLINUX -DHIDE_MPI -I$(MOD_ESMF) -I$(INC_ECCODES) -I$(INC_NETCDF) -I$(INC_HDFEOS) -I$(INC_HDF4) -I$(INC_HDF5) -DLIS_JULES
+FFLAGS          = -c -ffree-line-length-0 -O2  -fbacktrace  -fconvert=big-endian -DHIDE_SHR_MSG -DNO_SHR_VMATH -DGFORTRAN -DLINUX -DHIDE_MPI -I$(MOD_ESMF) -I$(INC_ECCODES) -I$(INC_NETCDF) -I$(INC_HDFEOS) -I$(INC_HDF4) -I$(INC_PETSC) -I$(INC_HDF5) -DLIS_JULES
+LDFLAGS         =  -L$(LIB_ESMF) -lesmf -lstdc++ -lz -L$(LIB_ECCODES) -leccodes_f90 -leccodes -L$(LIB_JPEG2000) -lopenjp2 -L$(LIB_NETCDF) -lnetcdff -lnetcdf -L$(LIB_HDFEOS) -lhdfeos -lGctp -L$(LIB_HDF4) -lmfhdf -ldf -ljpeg -lz  -L$(LIB_PETSC) -lpetsc -lm -ldl -L$(LIB_HDF5) -lhdf5_fortran -lhdf5_hl -lhdf5 -L$(LIB_LAPACK) -llapack -lblas -lz
+LIS_LIB_FLAGS   = -lesmf -lstdc++ -lz -leccodes_f90 -leccodes -lopenjp2 -lnetcdff -lnetcdf -lhdfeos -lGctp -lmfhdf -ldf -ljpeg -lz -lhdf5_fortran -lhdf5_hl -lhdf5 -llapack -lblas
+LIS_LIB_PATHS   = -L$(LIB_ESMF) -L$(LIB_ECCODES) -L$(LIB_JPEG2000) -L$(LIB_NETCDF) -L$(LIB_HDFEOS) -L$(LIB_HDF4) -L$(LIB_HDF5) -L$(LIB_LAPACK)

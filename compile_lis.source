@@ -1,0 +1,28 @@
+export SINGULARITYENV_python=/usr/bin/python3
+export SINGULARITYENV_LIS_ARCH=linux_gfortran
+export SINGULARITYENV_LIS_FC=/usr/local/bin/mpif90
+export SINGULARITYENV_LIS_CC=/usr/local/bin/mpicc
+export SINGULARITYENV_LIS_MODESMF=/usr/local/mod/modO/Linux.gfortran.64.mpiuni.default
+export SINGULARITYENV_LIS_LIBESMF=/usr/local/lib/libO/Linux.gfortran.64.mpiuni.default
+export SINGULARITYENV_LIS_OPENJPEG=/usr/local
+export SINGULARITYENV_LIS_ECCODES=/usr/local
+export SINGULARITYENV_LIS_NETCDF=/usr/local
+export SINGULARITYENV_LIS_HDF4=/usr/local
+export SINGULARITYENV_LIS_HDF5=/usr/local
+export SINGULARITYENV_LIS_HDFEOS=/opt/hdfeos-build
+export SINGULARITYENV_LIS_LAPACK=/usr/lib/x86_64-linux-gnu/lapack
+export SINGULARITYENV_LIS_PETSC=/usr/local
+
+rm -r LISF_public_release_7.5.0/lis/make/*.o LISF_public_release_7.5.0/lis/make/*.mod LISF_public_release_7.5.0/lis/make/*.d LISF_public_release_7.5.0/lis/make/LIS
+
+cp configure.lis LISF_public_release_7.5.0/lis/make/
+
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis lis_env.sif ./compile
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis sandbox ./compile
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis lis_env2.sif ./compile
+
+#funzio singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis recipe3_sb ./compile
+singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis recipe6.sif ./compile
+
+cp -v LISF_public_release_7.5.0/lis/make/LIS LISF_public_release_7.5.0/working/
+

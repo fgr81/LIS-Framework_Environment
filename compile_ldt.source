@@ -1,0 +1,28 @@
+export SINGULARITYENV_python=/usr/bin/python3
+export SINGULARITYENV_LDT_ARCH=linux_gfortran
+export SINGULARITYENV_LDT_FC=/usr/local/bin/mpif90
+export SINGULARITYENV_LDT_CC=/usr/local/bin/mpicc
+export SINGULARITYENV_LDT_MODESMF=/usr/local/mod/modO/Linux.gfortran.64.mpiuni.default
+export SINGULARITYENV_LDT_LIBESMF=/usr/local/lib/libO/Linux.gfortran.64.mpiuni.default
+export SINGULARITYENV_LDT_OPENJPEG=/usr/local
+export SINGULARITYENV_LDT_ECCODES=/usr/local
+export SINGULARITYENV_LDT_NETCDF=/usr/local
+export SINGULARITYENV_LDT_HDF4=/usr/local
+export SINGULARITYENV_LDT_HDF5=/usr/local
+export SINGULARITYENV_LDT_HDFEOS=/opt/hdfeos-build
+export SINGULARITYENV_LDT_LAPACK=/usr/lib/x86_64-linux-gnu/lapack
+export SINGULARITYENV_LDT_PETSC=/usr/local
+export SINGULARITYENV_LDT_GDAL=/usr/local
+export SINGULARITYENV_LDT_FORTRANGIS=/usr/local
+
+rm -r LISF_public_release_7.5.0/ldt/make/*.o LISF_public_release_7.5.0/ldt/make/*.mod LISF_public_release_7.5.0/ldt/make/*.d LISF_public_release_7.5.0/ldt/make/LDT
+
+cp configure.ldt LISF_public_release_7.5.0/ldt/make/
+
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt lis_env2.sif  ./compile
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt sandbox ./compile
+
+#funzio singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt recipe3_sb ./compile
+singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt recipe6.sif ./compile
+
+cp -v LISF_public_release_7.5.0/ldt/make/LDT LISF_public_release_7.5.0/working/
