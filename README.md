@@ -1,5 +1,5 @@
 # Singularity ( or Apptainer) container for LIS-Framework
-## developed and tested on version 7.5.0 (https://github.com/NASA-LIS/LISF/releases/tag/v7.5.0-public)
+## Developed and tested on version 7.5.0 (https://github.com/NASA-LIS/LISF/releases/tag/v7.5.0-public)
 
 ### Building the container:
 singularity build --fakeroot lis_env.sif recipe.def
