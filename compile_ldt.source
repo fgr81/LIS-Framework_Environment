@@ -18,6 +18,7 @@ export SINGULARITYENV_LDT_FORTRANGIS=/usr/local
 rm -r LISF_public_release_7.5.0/ldt/make/*.o LISF_public_release_7.5.0/ldt/make/*.mod LISF_public_release_7.5.0/ldt/make/*.d LISF_public_release_7.5.0/ldt/make/LDT
 
 cp configure.ldt LISF_public_release_7.5.0/ldt/make/
+cp LDT_misc.h    LISF_public_release_7.5.0/ldt/make/
 
 #singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt lis_env2.sif  ./compile
 #singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/ldt sandbox ./compile

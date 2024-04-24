@@ -16,6 +16,7 @@ export SINGULARITYENV_LIS_PETSC=/usr/local
 rm -r LISF_public_release_7.5.0/lis/make/*.o LISF_public_release_7.5.0/lis/make/*.mod LISF_public_release_7.5.0/lis/make/*.d LISF_public_release_7.5.0/lis/make/LIS
 
 cp configure.lis LISF_public_release_7.5.0/lis/make/
+cp LIS_misc.h    LISF_public_release_7.5.0/lis/make/
 
 #singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis lis_env.sif ./compile
 #singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lis sandbox ./compile

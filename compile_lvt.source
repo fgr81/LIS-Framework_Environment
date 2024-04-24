@@ -18,6 +18,7 @@ export SINGULARITYENV_LVT_FORTRANGIS=/usr/local/lib
 rm -r LISF_public_release_7.5.0/lvt/make/*.o LISF_public_release_7.5.0/lvt/make/*.mod LISF_public_release_7.5.0/lvt/make/*.d LISF_public_release_7.5.0/lvt/make/LVT
 
 cp configure.lvt LISF_public_release_7.5.0/lvt/make/
+cp LVT_misc.h    LISF_public_release_7.5.0/lvt/make/
 
 #singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lvt sandbox ./compile
 
