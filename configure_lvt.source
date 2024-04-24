@@ -1,0 +1,20 @@
+export SINGULARITYENV_python=/usr/bin/python3
+export SINGULARITYENV_LVT_ARCH=linux_gfortran
+export SINGULARITYENV_LVT_FC=/usr/local/bin/mpif90
+export SINGULARITYENV_LVT_CC=/usr/local/bin/mpicc
+export SINGULARITYENV_LVT_MODESMF=/usr/local/mod
+export SINGULARITYENV_LVT_LIBESMF=/usr/local/lib
+export SINGULARITYENV_LVT_OPENJPEG=/usr/local
+export SINGULARITYENV_LVT_ECCODES=/usr/local
+export SINGULARITYENV_LVT_NETCDF=/usr/local
+export SINGULARITYENV_LVT_HDF4=/usr/local
+export SINGULARITYENV_LVT_HDF5=/usr/local
+export SINGULARITYENV_LVT_HDFEOS=/usr/local
+export SINGULARITYENV_LVT_LAPACK=/usr/lib/x86_64-linux-gnu/lapack
+export SINGULARITYENV_LVT_PETSC=/usr/local
+export SINGULARITYENV_LVT_GDAL=/usr/local
+export SINGULARITYENV_LVT_FORTRANGIS=/usr/local
+
+#singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lvt lis_env.sif ./configure
+singularity exec -B LISF_public_release_7.5.0:/mnt/ --pwd /mnt/lvt recipe3_sb ./configure
+
