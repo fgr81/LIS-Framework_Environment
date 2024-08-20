@@ -9,3 +9,6 @@ singularity build --fakeroot lis_env.sif recipe.def
 1. Place the container in the folder hosting LISF too.
 2. Edit and source configure_X.source.
 3. Edit and source compileX.source to obtain LDT, LIS, LVT.
+
+
+[![DOI](https://zenodo.org/badge/779472325.svg)](https://zenodo.org/doi/10.5281/zenodo.13337331)
